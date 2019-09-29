@@ -10,7 +10,7 @@ AWS_PROFILE = $(shell echo $$AWS_PROFILE)
 
 # Image
 IMAGE_NAME = onelogin-mfa-profile-generator
-IMAGE = ${USERNAME}/${IMAGE_NAME}
+IMAGE = ${USER}/${IMAGE_NAME}
 TAGGED_IMAGE = ${IMAGE}:${VERSION}
 
 

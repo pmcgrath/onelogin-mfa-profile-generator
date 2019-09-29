@@ -5,7 +5,7 @@ Wrap [onelogin](https://github.com/onelogin/onelogin-aws-cli-assume-role) jar in
 
 # Build image
 ```
-# Build local docker image - will include the jar and a script, will build image based on your USERNAME env var value
+# Build local docker image - will include the jar and a script, will build image based on your USER env var value
 make build-image
 
 # Show image
