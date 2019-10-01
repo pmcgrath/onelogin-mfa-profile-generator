@@ -169,3 +169,30 @@ Usage
 ```
 renew-onelogin-aws
 ```
+
+
+
+# Create image with hard coded env vars
+You could also create an image as another layer on top of this image
+
+Just need to use a local docker file to create a local image - should not push to dockerhub or a shared registry
+
+See the Dockerfile.local file, you would need to set some of the values
+
+Build with
+```
+docker image build --file Dockerfile.local --tag onelogin-mfa-profile-generator:1.0 .
+```
+
+Can then use as follows
+```
+export AWS_PROFILE=mfa
+docker container run \
+	-ti \
+	--rm \
+	--name onelogin \
+        --env AWS_PROFILE=${AWS_PROFILE} \
+        --user "$(id -u):$(id -g)" \
+        --volume ${HOME}/.aws:/onelogin/.aws \
+        onelogin-mfa-profile-generator:1.0
+```

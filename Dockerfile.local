@@ -1,0 +1,9 @@
+FROM        pmcgrath/onelogin-mfa-profile-generator:1.0
+
+ENV         AWS_REGION=set-me \
+            EMAIL=set-me \
+            ONELOGIN_APP_ID=set-me \
+            ONELOGIN_CLIENT_ID=set-me \
+            ONELOGIN_CLIENT_SECRET=set-me \
+            ONELOGIN_SUB_DOMAIN=set-me \
+            AWS_ACCOUNT_MAP='account-id-1 account-name-2\naccount-id-2 account-name-2'
